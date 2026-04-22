@@ -16,7 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from . import views
+from django.urls import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.home, name='home'),
+    path('tarefas/', include('tarefas.urls')),
+    # include fez um agrupamento de todas as rotas do app registrados em urls do app tarefas
+    
 ]
