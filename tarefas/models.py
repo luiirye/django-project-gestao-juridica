@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 # criamos classes e esssas classes serão traduzidas em tabelas no banco de dados
 
-class terefaModel(models.Model): #precisa herdar de models.Model para ser reconhecida como um modelo do Django
+class tarefaModel(models.Model): #precisa herdar de models.Model para ser reconhecida como um modelo do Django
     nome = models.CharField(max_length=100) #campo de texto com limite de 100 caracteres
     descricao = models.TextField(null = True, blank = True) #campo de texto não obrigatório
     concluido = models.BooleanField(default=False) #campo booleano para indicar se a tarefa foi concluída ou não
