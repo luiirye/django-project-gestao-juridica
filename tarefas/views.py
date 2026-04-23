@@ -12,12 +12,12 @@ def tarefas_home(request):
     return render(request, 'tarefas/home.html', contexto)
 
 def registrar_tarefas(request:HttpRequest):
-    # Tratamento de dados enviados pelo formulário
-    if request.method == 'POST':
-        formulario = TarefasForm(request.POST) #instância do formulário preenchida com os dados enviados pelo usuário
-        if formulario.is_valid(): #verificar se os dados enviados são válidos de acordo com as regras definidas no formulário
-            formulario.save() #salvar os dados no banco de dados (cria uma nova instância do modelo tarefaModel com os dados do formulário e salva no banco de dados)
-            return redirect("tarefas:home") #redirecionar o usuário para a página inicial das tarefas após o envio do formulário
+    if request.method == "POST":
+        formulario = TarefasForm(request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            return redirect('tarefas:home')
+ 
     
     contexto = {
         "form": TarefasForm #instância do formulário para ser renderizada no template HTML
