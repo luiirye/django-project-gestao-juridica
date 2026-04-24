@@ -11,6 +11,25 @@
     
     <body>
         <h1>Olá, {{ nome }}! Aqui estão suas tarefas/demandas</h1>
+        
+        <table border="2">
+            <thead>
+               <td>Nome</td>
+               <td>Descrição</td>
+               <td>Status</td>
+               <td>Data de Criação</td>
+            </thead>
+            <tbody>
+                {% for tarefa in tarefas%}
+                    <tr>
+                        <td>{{ tarefa.nome }}</td>
+                        <td>{{ tarefa.descricao }}</td>
+                        <td>{{ tarefa.concluido }}</td>
+                        <td>{{ tarefa.data_criacao }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
         <a href="{% url 'tarefas:registrar_tarefas' %}">Adicionar tarefa</a> 
     </body>
 </html>
