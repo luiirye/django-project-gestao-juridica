@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect # importamos a função render para renderizar os templates HTML e a função redirect para redirecionar o usuário para outra página após o envio do formulário
+from django.shortcuts import render, redirect, get_object_or_404 # importamos a função render para renderizar os templates HTML e a função redirect para redirecionar o usuário para outra página após o envio do formulário
 from django.http import HttpRequest #importar a classe HttpRequest para tipar o parâmetro da função
 from .forms import TarefasForm
 from .models import tarefaModel
@@ -26,3 +26,8 @@ def registrar_tarefas(request:HttpRequest):
     }
     
     return render(request, 'tarefas/registrar.html', contexto)
+
+def remover_tarefas(request:HttpRequest, id):
+    tarefa = get_object_or_404(tarefaModel, id=id)
+    tarefa.delete()
+    return redirect("tarefas:home")
