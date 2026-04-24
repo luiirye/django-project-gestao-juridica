@@ -8,5 +8,6 @@ urlpatterns = [
     # aqui serão definidas as rotas relacionadas ao app "tarefas"
     path('', views.tarefas_home, name='home'),
     path('registrar/', views.registrar_tarefas, name='registrar_tarefas'),
-    path('remover/<int:id>/', views.remover_tarefas, name='remover_tarefas')
+    path('remover/<int:id>/', views.remover_tarefas, name='remover_tarefas'),
+    path('editar/<int:id>/', views.editar_tarefas, name='editar_tarefas')
 ]

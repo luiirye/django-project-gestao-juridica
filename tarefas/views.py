@@ -31,3 +31,18 @@ def remover_tarefas(request:HttpRequest, id):
     tarefa = get_object_or_404(tarefaModel, id=id)
     tarefa.delete()
     return redirect("tarefas:home")
+
+def editar_tarefas(request:HttpRequest, id):
+    tarefa = get_object_or_404(tarefaModel, id=id)
+    if request.method == "POST":
+        formulario = TarefasForm(request.POST, instance=tarefa)
+        if formulario.is_valid():
+            formulario.save()
+            return redirect('tarefas:home')
+        
+        formulario = TarefasForm(instance=tarefa) #instância do formulário preenchida com os dados da tarefa a ser editada
+        
+        contexto = {
+            "form": formulario
+        }
+    return render(request, 'tarefas/editar.html', contexto) 
