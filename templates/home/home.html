@@ -1,14 +1,38 @@
-:<!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="pt-br">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Home - Gestão Jurídica</title>
     </head>
     
     <body>
-        <h1>Bem-vindo ao sistema de gestão de tarefas e processos jurídicos!</h1>
-        <p>Sistema para gerenciar tarefas, processos, clientes e usuários internos</p>
-        <a href="{% url 'tarefas:home' %}">Acesse as tarefas</a>
+
+        <!-- Cabeçalho da página -->
+        <header>
+            <h1>Sistema de Gestão Jurídica</h1>
+            <p>Bem-vindo ao sistema. Escolha uma opção abaixo.</p>
+        </header>
+
+        <!-- Menu de navegação -->
+        <nav>
+            <ul>
+                <li><a href="{% url 'tarefas:home' %}">Tarefas</a></li>
+                <li><a href="{% url 'templates/home/login_home.html' %}">Login</a></li>
+            </ul>
+        </nav>
+
+        <!-- Conteúdo principal -->
+        <main>
+            <h2>O que você deseja fazer?</h2>
+            <p>Use o menu acima para navegar pelo sistema.</p>
+        </main>
+
+        <!-- Rodapé -->
+        <footer>
+            <p>Sistema de Gestão Jurídica &copy; 2026</p>
+        </footer>
+
     </body>
 </html>

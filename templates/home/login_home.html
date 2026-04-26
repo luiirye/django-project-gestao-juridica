@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Login - Gestão Jurídica</title>
+    </head>
+
+    <body>
+
+        <!-- Cabeçalho -->
+        <header>
+            <h1>Sistema de Gestão Jurídica</h1>
+        </header>
+
+        <!-- Conteúdo principal -->
+        <main>
+
+            <h2>Acesse sua conta</h2>
+
+            <!-- Formulário de login -->
+            <form method="post">
+
+                {% csrf_token %}
+
+                <!-- Campo: usuário -->
+                <label for="usuario">Usuário:</label>
+                <input 
+                    type="text" 
+                    id="usuario" 
+                    name="usuario" 
+                    placeholder="Digite seu usuário"
+                    required
+                >
+
+                <!-- Campo: senha -->
+                <label for="senha">Senha:</label>
+                <input 
+                    type="password" 
+                    id="senha" 
+                    name="senha" 
+                    placeholder="Digite sua senha"
+                    required
+                >
+
+                <!-- Botão de enviar -->
+                <button type="submit">Entrar</button>
+
+            </form>
+
+        </main>
+
+        <!-- Rodapé -->
+        <footer>
+            <p>Sistema de Gestão Jurídica &copy; 2026</p>
+        </footer>
+
+    </body>
+</html>
